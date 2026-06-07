@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Иван Горбанёв — Менеджер по продажам</title>
+  <meta name="description" content="Иван Горбанёв — начинающий менеджер по продажам из Таганрога. Открыт к B2B и B2C позициям." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+
+  <div id="cursor-circle"></div>
+  <div id="cursor-dot"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">dulce.org</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Обо мне</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Навыки</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Контакт</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle" id="lang-toggle">
+          <button class="lang-opt active" data-l="ru">RU</button>
+          <button class="lang-opt" data-l="en">EN</button>
+        </div>
+        <button class="burger" id="burger" aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span data-i18n="hero.badge">Открыт к предложениям</span>
+      </div>
+      <span class="hero-brandmark">dulce.org</span>
+      <h1 class="hero-name" data-i18n-html="hero.name">Иван<br>Горбанёв</h1>
+      <div class="hero-typing-wrapper">
+        <span class="hero-typing" id="typing-text"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+      <p class="hero-sub" data-i18n="hero.sub">Помогаю бизнесу расти — через честные переговоры, системную работу с клиентами и желание побеждать.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-cta"><span data-i18n="hero.cta">Написать мне</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#about" class="btn-ghost" data-i18n="hero.ghost">Узнать больше</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-val">20</span>
+          <span class="stat-label" data-i18n="stat.age">лет</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-val">B2B</span>
+          <span class="stat-label">&amp; B2C</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-val" data-i18n="stat.city.val">Таганрог</span>
+          <span class="stat-label" data-i18n="stat.city.label">→ везде</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </section>
+
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label" data-i18n="about.label">Обо мне</span>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo fade-up">
+          <div class="photo-wrap">
+            <div class="real-photo">
+              <img src="img/photo.jpg" alt="Иван Горбанёв" />
+            </div>
+            <div class="photo-ring photo-ring--1"></div>
+            <div class="photo-ring photo-ring--2"></div>
+          </div>
+          <div class="about-card-mini fade-up">
+            <i class="fa-solid fa-location-dot"></i>
+            <span data-i18n="card.location">Таганрог, Ростовская обл.</span>
+          </div>
+          <div class="about-card-mini fade-up">
+            <i class="fa-solid fa-briefcase"></i>
+            <span data-i18n="card.role">Менеджер по продажам · Начало карьеры</span>
+          </div>
+          <div class="about-card-mini fade-up">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span data-i18n="card.grad">Молодой специалист · 2025</span>
+          </div>
+        </div>
+        <div class="about-text fade-up">
+          <h2 class="about-title" data-i18n-html="about.title">Начинающий<br>менеджер по продажам</h2>
+          <div class="about-divider"></div>
+          <p data-i18n="about.p1">Мне 20 лет, я из Таганрога. Выбрал продажи осознанно — меня привлекает живое общение с людьми, умение слышать и убеждать. В этой сфере результат зависит напрямую от тебя, и это мотивирует.</p>
+          <p data-i18n="about.p2">Сейчас ищу первую позицию в B2B или B2C продажах, где можно расти и учиться у сильной команды. Готов к холодным звонкам, работе с возражениями, CRM.</p>
+          <p data-i18n="about.p3">Умею слушать собеседника, быстро нахожу контакт, не боюсь отказов — воспринимаю их как точку роста.</p>
+          <div class="about-qualities">
+            <div class="quality">
+              <i class="fa-solid fa-comments"></i>
+              <span data-i18n="quality.1">Коммуникабельность</span>
+            </div>
+            <div class="quality">
+              <i class="fa-solid fa-chart-line"></i>
+              <span data-i18n="quality.2">Ориентация на результат</span>
+            </div>
+            <div class="quality">
+              <i class="fa-solid fa-bolt"></i>
+              <span data-i18n="quality.3">Быстрое обучение</span>
+            </div>
+            <div class="quality">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span data-i18n="quality.4">Устойчивость к стрессу</span>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span class="tag" data-i18n="tag.cold">Холодные звонки</span>
+            <span class="tag" data-i18n="tag.obj">Работа с возражениями</span>
+            <span class="tag">B2B / B2C</span>
+            <span class="tag" data-i18n="tag.crm">CRM системы</span>
+            <span class="tag" data-i18n="tag.nego">Переговоры</span>
+            <span class="tag" data-i18n="tag.needs">Выявление потребностей</span>
+            <span class="tag" data-i18n="tag.funnel">Воронка продаж</span>
+            <span class="tag" data-i18n="tag.email">Email-рассылки</span>
+            <span class="tag" data-i18n="tag.team">Работа в команде</span>
+            <span class="tag" data-i18n="tag.time">Тайм-менеджмент</span>
+            <span class="tag">Excel / Google Sheets</span>
+            <span class="tag" data-i18n="tag.res">Устойчивость к отказам</span>
+          </div>
+          <div class="about-actions">
+            <a href="#contact" class="btn-link"><span data-i18n="about.btn">Написать напрямую</span> <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label" data-i18n="skills.label">Что я уже умею</span>
+        <h2 class="section-title" data-i18n="skills.title">Фундамент карьеры</h2>
+        <p class="section-desc" data-i18n="skills.desc">Опыта работы ещё нет — но есть база, на которой строится всё остальное.</p>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card" data-loaded="false">
+          <div class="card-skeleton-overlay">
+            <div class="sk-line sk-line--xs"></div>
+            <div class="sk-emoji-ph"></div>
+            <div class="sk-line sk-line--title"></div>
+            <div class="sk-line sk-line--full"></div>
+            <div class="sk-line sk-line--full"></div>
+            <div class="sk-line sk-line--w70"></div>
+            <div class="sk-tags-row">
+              <div class="sk-tag-ph"></div>
+              <div class="sk-tag-ph sk-tag-ph--lg"></div>
+              <div class="sk-tag-ph sk-tag-ph--sm"></div>
+            </div>
+            <div class="sk-footer-line"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-num">01</div>
+            <div class="card-icon-wrap">
+              <div class="card-icon-box">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="12" height="9" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 10.5L1.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <rect x="9" y="8" width="12" height="9" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M19 17.5L20.5 20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="card-title" data-i18n-html="c1.title">Переговоры<br>и убеждение</h3>
+            <p class="card-desc" data-i18n="c1.desc">Умею вести диалог, не давить — слушать и предлагать решения. Практиковал в учебных кейсах и повседневном общении.</p>
+            <div class="card-tags">
+              <span class="tag tag--sm" data-i18n="tag.nego">Переговоры</span>
+              <span class="tag tag--sm" data-i18n="tag.obj">Работа с возражениями</span>
+              <span class="tag tag--sm" data-i18n="tag.listen">Активное слушание</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-text" data-i18n="c1.footer">Ключевой навык продаж</span>
+              <i class="fa-solid fa-arrow-up-right card-footer-arrow"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-loaded="false">
+          <div class="card-skeleton-overlay">
+            <div class="sk-line sk-line--xs"></div>
+            <div class="sk-emoji-ph"></div>
+            <div class="sk-line sk-line--title"></div>
+            <div class="sk-line sk-line--full"></div>
+            <div class="sk-line sk-line--full"></div>
+            <div class="sk-line sk-line--w70"></div>
+            <div class="sk-tags-row">
+              <div class="sk-tag-ph sk-tag-ph--lg"></div>
+              <div class="sk-tag-ph sk-tag-ph--sm"></div>
+              <div class="sk-tag-ph"></div>
+            </div>
+            <div class="sk-footer-line"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-num">02</div>
+            <div class="card-icon-wrap">
+              <div class="card-icon-box">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="12" width="5" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="8.5" y="7" width="5" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="16" y="2" width="5" height="19" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3.5 11.5L11 6.5L18.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+                  <circle cx="3.5" cy="11.5" r="1.5" fill="currentColor"/>
+                  <circle cx="11" cy="6.5" r="1.5" fill="currentColor"/>
+                  <circle cx="18.5" cy="1.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="card-title" data-i18n-html="c2.title">Системный<br>подход</h3>
+            <p class="card-desc" data-i18n="c2.desc">Понимаю структуру воронки продаж, изучаю CRM-системы (AmoCRM, Bitrix24). Слежу за метриками — конверсия, средний чек, LTV.</p>
+            <div class="card-tags">
+              <span class="tag tag--sm" data-i18n="tag.funnel">Воронка продаж</span>
+              <span class="tag tag--sm">CRM</span>
+              <span class="tag tag--sm" data-i18n="tag.analytics">Аналитика</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-text" data-i18n="c2.footer">Аналитика и цифры</span>
+              <i class="fa-solid fa-arrow-up-right card-footer-arrow"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-loaded="false">
+          <div class="card-skeleton-overlay">
+            <div class="sk-line sk-line--xs"></div>
+            <div class="sk-emoji-ph"></div>
+            <div class="sk-line sk-line--title"></div>
+            <div class="sk-line sk-line--full"></div>
+            <div class="sk-line sk-line--full"></div>
+            <div class="sk-line sk-line--w70"></div>
+            <div class="sk-tags-row">
+              <div class="sk-tag-ph"></div>
+              <div class="sk-tag-ph sk-tag-ph--lg"></div>
+              <div class="sk-tag-ph sk-tag-ph--sm"></div>
+            </div>
+            <div class="sk-footer-line"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-num">03</div>
+            <div class="card-icon-wrap">
+              <div class="card-icon-box">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="11" cy="11" r="3" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="3" cy="4" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <circle cx="19" cy="4" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <circle cx="3" cy="18" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <circle cx="19" cy="18" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <line x1="8.4" y1="8.4" x2="4.5" y2="5.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="13.6" y1="8.4" x2="17.5" y2="5.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="8.4" y1="13.6" x2="4.5" y2="16.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="13.6" y1="13.6" x2="17.5" y2="16.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="card-title" data-i18n-html="c3.title">Работа<br>с клиентами</h3>
+            <p class="card-desc" data-i18n="c3.desc">Быстро устанавливаю контакт, хорошо слышу потребности. Не боюсь холодного контакта — нахожу подход к разным людям.</p>
+            <div class="card-tags">
+              <span class="tag tag--sm" data-i18n="tag.cold">Холодные звонки</span>
+              <span class="tag tag--sm" data-i18n="tag.service">Клиентский сервис</span>
+              <span class="tag tag--sm">B2C</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-footer-text" data-i18n="c3.footer">Клиентоориентированность</span>
+              <i class="fa-solid fa-arrow-up-right card-footer-arrow"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="skills-banner fade-up">
+        <div class="skills-banner-text">
+          <span class="skills-banner-label" data-i18n="banner.label">Подход к работе</span>
+          <p data-i18n="banner.quote">«Продажи — это не давить, а помогать. Нахожу боль клиента и предлагаю решение. Честно, без манипуляций.»</p>
+        </div>
+        <div class="skills-banner-icon"><i class="fa-solid fa-quote-right"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label" data-i18n="contact.label">Контакт</span>
+        <h2 class="section-title" data-i18n-html="contact.title">Давайте<br>познакомимся</h2>
+        <p class="section-desc" data-i18n="contact.desc">Ищу возможности в продажах. Открыт к предложениям — напишите мне, и я отвечу быстро.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-links fade-up">
+          <a href="https://t.me/du1cee" class="contact-item" target="_blank" rel="noopener">
+            <div class="contact-icon"><i class="fa-brands fa-telegram"></i></div>
+            <div class="contact-info">
+              <span class="contact-label">Telegram</span>
+              <span class="contact-value">@du1cee</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right contact-arrow"></i>
+          </a>
+          <a href="mailto:du1ceorgg@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">du1ceorgg@gmail.com</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right contact-arrow"></i>
+          </a>
+          <a href="https://vk.com/dulce.orgg" class="contact-item" target="_blank" rel="noopener">
+            <div class="contact-icon"><i class="fa-brands fa-vk"></i></div>
+            <div class="contact-info">
+              <span class="contact-label" data-i18n="vk.label">ВКонтакте</span>
+              <span class="contact-value">dulce.orgg</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right contact-arrow"></i>
+          </a>
+        </div>
+        <div class="contact-callout fade-up">
+          <div class="callout-inner">
+            <div class="callout-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3 data-i18n="callout.h3">Готов выйти на связь</h3>
+            <p data-i18n="callout.p">Рассматриваю позиции менеджера по продажам — B2B, B2C, телемаркетинг, клиентский сервис. Обучаем, мотивирован, готов стартовать.</p>
+            <div class="callout-tags">
+              <span data-i18n="callout.t1">Full-time</span>
+              <span data-i18n="callout.t2">Таганрог / Удалённо</span>
+              <span data-i18n="callout.t3">Entry level</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="footer-logo">dulce.org</span>
+      <span class="footer-copy" data-i18n="footer.copy">© 2025 Иван Горбанёв · Таганрог</span>
+      <div class="footer-links">
+        <a href="https://t.me/du1cee" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+        <a href="mailto:du1ceorgg@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://vk.com/dulce.orgg" target="_blank" rel="noopener"><i class="fa-brands fa-vk"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
