@@ -66,7 +66,7 @@
       'callout.t1': 'Full-time',
       'callout.t2': 'Таганрог / Удалённо',
       'callout.t3': 'Entry level',
-      'footer.copy': '© 2025 Иван Горбанёв · Таганрог'
+      'footer.copy': '© 2026 Иван Горбанёв · Таганрог'
     },
     en: {
       'nav.about': 'About',
@@ -130,7 +130,7 @@
       'callout.t1': 'Full-time',
       'callout.t2': 'Taganrog / Remote',
       'callout.t3': 'Entry level',
-      'footer.copy': '© 2025 Ivan Gorbanev · Taganrog'
+      'footer.copy': '© 2026 Ivan Gorbanev · Taganrog'
     }
   };
 
