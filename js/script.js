@@ -6,7 +6,6 @@
   var T = {
     ru: {
       'nav.about': 'Обо мне',
-      'nav.skills': 'Навыки',
       'nav.faq': 'Интервью',
       'nav.contact': 'Контакт',
       'hero.name': 'Иван<br>Горбанёв',
@@ -41,24 +40,7 @@
       'tag.team': 'Работа в команде',
       'tag.time': 'Тайм-менеджмент',
       'tag.res': 'Устойчивость к отказам',
-      'tag.listen': 'Активное слушание',
-      'tag.analytics': 'Аналитика',
-      'tag.service': 'Клиентский сервис',
       'about.btn': 'Написать напрямую',
-      'skills.label': 'Что я уже умею',
-      'skills.title': 'Фундамент карьеры',
-      'skills.desc': 'Опыта работы ещё нет — но есть база, на которой строится всё остальное.',
-      'c1.title': 'Переговоры<br>и убеждение',
-      'c1.desc': 'Умею вести диалог, не давить — слушать и предлагать решения. Практиковал в учебных кейсах и повседневном общении.',
-      'c1.footer': 'Ключевой навык продаж',
-      'c2.title': 'Системный<br>подход',
-      'c2.desc': 'Понимаю структуру воронки продаж, изучаю CRM-системы (AmoCRM, Bitrix24). Слежу за метриками — конверсия, средний чек, LTV.',
-      'c2.footer': 'Аналитика и цифры',
-      'c3.title': 'Работа<br>с клиентами',
-      'c3.desc': 'Быстро устанавливаю контакт, хорошо слышу потребности. Не боюсь холодного контакта — нахожу подход к разным людям.',
-      'c3.footer': 'Клиентоориентированность',
-      'banner.label': 'Подход к работе',
-      'banner.quote': '«Продажи — это не давить, а помогать. Нахожу боль клиента и предлагаю решение. Честно, без манипуляций.»',
       'faq.label': 'Мини-интервью',
       'faq.title': 'Вопрос — ответ',
       'faq.desc': 'Коротко о том, что для меня значат продажи.',
@@ -81,7 +63,6 @@
     },
     en: {
       'nav.about': 'About',
-      'nav.skills': 'Skills',
       'nav.faq': 'Interview',
       'nav.contact': 'Contact',
       'hero.name': 'Ivan<br>Gorbanev',
@@ -116,24 +97,7 @@
       'tag.team': 'Teamwork',
       'tag.time': 'Time management',
       'tag.res': 'Rejection resilience',
-      'tag.listen': 'Active listening',
-      'tag.analytics': 'Analytics',
-      'tag.service': 'Customer service',
       'about.btn': 'Message directly',
-      'skills.label': 'What I can do',
-      'skills.title': 'Career Foundation',
-      'skills.desc': 'No work experience yet — but there\'s a solid base to build everything on.',
-      'c1.title': 'Negotiation<br>& Persuasion',
-      'c1.desc': 'I know how to lead a dialogue without pressure — listen and offer solutions. Practiced in case studies and everyday communication.',
-      'c1.footer': 'Core sales skill',
-      'c2.title': 'Systematic<br>Approach',
-      'c2.desc': 'I understand sales funnel structure, studying CRM systems (AmoCRM, Bitrix24). Tracking metrics — conversion, average check, LTV.',
-      'c2.footer': 'Analytics & numbers',
-      'c3.title': 'Client<br>Relations',
-      'c3.desc': 'I build rapport fast and listen to needs carefully. Not afraid of cold contact — I find an approach to different people.',
-      'c3.footer': 'Client-first mindset',
-      'banner.label': 'Work approach',
-      'banner.quote': '"Sales is not about pushing, it\'s about helping. I find the client\'s pain and offer a solution. Honest, no manipulation."',
       'faq.label': 'Mini-interview',
       'faq.title': 'Question — Answer',
       'faq.desc': 'A short take on what sales means to me.',
@@ -283,7 +247,7 @@
       requestAnimationFrame(animateCursor);
     })();
 
-    document.querySelectorAll('a, button, .card, .tag, .quality').forEach(function (el) {
+    document.querySelectorAll('a, button, .tag, .quality').forEach(function (el) {
       el.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
       el.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
     });
@@ -323,33 +287,9 @@
       .from('.hero-scroll-hint',    { opacity: 0, duration: 0.8 },        '-=0.2');
 
 
-    gsap.utils.toArray('.card').forEach(function (card, i) {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' },
-        opacity: 0,
-        y: 36,
-        duration: 0.65,
-        delay: i * 0.12,
-        ease: 'power3.out',
-        onStart: function () {
-          var delay = 550 + i * 180;
-          setTimeout(function () { card.dataset.loaded = 'true'; }, delay);
-        }
-      });
-    });
-
-    gsap.from('.skills-banner', {
-      scrollTrigger: { trigger: '.skills-banner', start: 'top 90%', toggleActions: 'play none none none' },
-      opacity: 0, y: 24, duration: 0.7, ease: 'power3.out'
-    });
-
     gsap.from('.callout-inner', {
       scrollTrigger: { trigger: '.callout-inner', start: 'top 90%', toggleActions: 'play none none none' },
       opacity: 0, x: 30, duration: 0.7, ease: 'power3.out'
-    });
-  } else {
-    document.querySelectorAll('.card').forEach(function (card, i) {
-      setTimeout(function () { card.dataset.loaded = 'true'; }, 300 + i * 150);
     });
   }
 
