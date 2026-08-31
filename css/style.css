@@ -503,6 +503,44 @@ body.cursor-hover #cursor-circle {
 
 .hero-stat-divider { width: 1px; height: 28px; background: var(--border); }
 
+.hero-quote {
+  max-width: 620px;
+  margin: 40px auto 0;
+  padding: 26px 30px;
+  background: var(--white-dim);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
+  position: relative;
+}
+
+.hero-quote-icon {
+  color: var(--primary);
+  opacity: 0.5;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero-quote-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.hero-quote-author {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
 .hero-scroll-hint {
   position: absolute;
   bottom: 36px;
@@ -1009,6 +1047,49 @@ body.cursor-hover #cursor-circle {
   flex-shrink: 0;
 }
 
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 26px 30px;
+  background: var(--dark-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.faq-item:hover {
+  border-color: var(--border-primary);
+  background: var(--dark-card-hover);
+}
+
+.faq-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.faq-q i { color: var(--primary); font-size: 0.95rem; margin-top: 4px; flex-shrink: 0; }
+
+.faq-a {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  padding-left: 26px;
+}
+
 .contact {
   background: rgba(14, 18, 32, 0.72);
   border-top: 1px solid var(--border);
@@ -1224,6 +1305,9 @@ body.cursor-hover #cursor-circle {
   .skills-banner { flex-direction: column; text-align: center; padding: 24px 20px; }
 
   .hero-stats { gap: 16px; padding: 14px 20px; }
+  .hero-quote { padding: 20px 22px; margin-top: 28px; }
+  .faq-item { padding: 20px; }
+  .faq-a { padding-left: 0; }
 
   .footer .container { flex-direction: column; gap: 12px; text-align: center; }
 }
