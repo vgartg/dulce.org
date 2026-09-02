@@ -835,6 +835,181 @@ body.cursor-hover #cursor-circle {
   padding-left: 26px;
 }
 
+.mentors-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 56px;
+  align-items: stretch;
+}
+
+.books-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.book-item {
+  position: relative;
+  min-width: 0;
+  padding-top: 148%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--dark-card);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.book-item:hover {
+  border-color: rgba(201, 162, 58, 0.35);
+  transform: translateY(-3px);
+}
+
+.book-item--expert { background: #AD0404; }
+
+.book-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.book-item:hover img { transform: scale(1.05); }
+
+.book-num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #0B0F18;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.74rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(201, 162, 58, 0.35);
+}
+
+.mentors-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
+}
+
+.mentor-card {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-primary);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.mentor-card:hover,
+.mentor-card.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 24px rgba(201, 162, 58, 0.22);
+}
+
+.mentor-photo-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.mentor-photo-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mentor-card:hover .mentor-photo-frame img,
+.mentor-card.active .mentor-photo-frame img { transform: scale(1.05); }
+
+.mentor-photo-frame--dmitry img { object-position: center 78%; }
+
+.mentor-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -120%;
+  background: linear-gradient(75deg, transparent 20%, rgba(201, 162, 58, 0.35) 50%, transparent 80%);
+  transition: left 0.7s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mentor-card:hover .mentor-photo-frame::before,
+.mentor-card.active .mentor-photo-frame::before { left: 120%; }
+
+.mentor-name {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 14px;
+  background: rgba(11, 15, 24, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  z-index: 3;
+}
+
+.mentor-comment {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 46px 22px 24px;
+  background: linear-gradient(0deg, rgba(11, 15, 24, 0.97) 35%, rgba(11, 15, 24, 0.65) 78%, transparent 100%);
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.mentor-card:hover .mentor-comment,
+.mentor-card.active .mentor-comment { transform: translateY(0); }
+
+.mentor-comment-icon {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--primary);
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.mentor-comment p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--primary-light);
+  text-shadow: 0 0 18px rgba(201, 162, 58, 0.25);
+}
+
 .contact {
   background: rgba(14, 18, 32, 0.72);
   border-top: 1px solid var(--border);
@@ -1048,6 +1223,12 @@ body.cursor-hover #cursor-circle {
   .hero-quote { padding: 20px 22px; margin-top: 28px; }
   .faq-item { padding: 20px; }
   .faq-a { padding-left: 0; }
+
+  .mentors-layout { grid-template-columns: 1fr; gap: 32px; }
+  .books-stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .book-item { padding-top: 148%; }
+  .mentors-photos { gap: 20px; }
+  .mentor-card { flex: none; aspect-ratio: 3 / 4; }
 
   .footer .container { flex-direction: column; gap: 12px; text-align: center; }
 }

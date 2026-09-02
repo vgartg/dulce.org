@@ -7,6 +7,7 @@
     ru: {
       'nav.about': 'Обо мне',
       'nav.faq': 'Интервью',
+      'nav.mentors': 'Наставники',
       'nav.contact': 'Контакт',
       'hero.name': 'Иван<br>Горбанёв',
       'initials': 'ИГ',
@@ -24,13 +25,12 @@
       'card.location': 'Таганрог, Ростовская обл.',
       'card.role': 'Менеджер по продажам · Начало карьеры',
       'about.p1': 'Мне 20 лет, я из Таганрога. Выбрал продажи осознанно — меня привлекает живое общение с людьми, умение слышать и убеждать. В этой сфере результат зависит напрямую от тебя, и это мотивирует.',
-      'about.p2': 'Сейчас ищу первую позицию в B2B или B2C продажах, где можно расти и учиться у сильной команды. Готов к холодным звонкам, работе с возражениями, CRM.',
+      'about.p2': 'Сейчас ищу первую позицию в B2B или B2C продажах, где можно расти и учиться у сильной команды. Готов к холодным звонкам, если продукт того стоит.',
       'about.p3': 'Умею слушать собеседника, быстро нахожу контакт, не боюсь отказов — воспринимаю их как точку роста.',
       'quality.1': 'Коммуникабельность',
       'quality.2': 'Ориентация на результат',
       'quality.3': 'Быстрое обучение',
       'quality.4': 'Устойчивость к стрессу',
-      'tag.cold': 'Холодные звонки',
       'tag.obj': 'Работа с возражениями',
       'tag.crm': 'CRM системы',
       'tag.nego': 'Переговоры',
@@ -50,6 +50,13 @@
       'faq.a2': 'Я умею формировать и поддерживать глубокие эмоциональные связи, разбираюсь в психологии общения. Помощь людям — почти что моя идея фикс.',
       'faq.q3': 'Что для вас важнее всего в продажах?',
       'faq.a3': 'Однозначно продукт, а в работе в целом — личность руководителя.',
+      'mentors.label': 'Источники знаний',
+      'mentors.title': 'На чём строится моё мнение о продажах',
+      'mentors.desc': 'Люди и книги, которые сформировали мой подход к продажам.',
+      'mentors.mikhail.name': 'Михаил Гребенюк',
+      'mentors.mikhail.comment': 'Очень много учусь у Михаила — считаю его своим наставником.',
+      'mentors.dmitry.name': 'Дмитрий Норка',
+      'mentors.dmitry.comment': 'Дмитрий перевернул моё отношение к современным продажам.',
       'contact.label': 'Контакт',
       'contact.title': 'Давайте<br>познакомимся',
       'contact.desc': 'Ищу возможности в продажах. Открыт к предложениям — напишите мне, и я отвечу быстро.',
@@ -64,6 +71,7 @@
     en: {
       'nav.about': 'About',
       'nav.faq': 'Interview',
+      'nav.mentors': 'Mentors',
       'nav.contact': 'Contact',
       'hero.name': 'Ivan<br>Gorbanev',
       'initials': 'IG',
@@ -81,13 +89,12 @@
       'card.location': 'Taganrog, Rostov region',
       'card.role': 'Sales Manager · Entry level',
       'about.p1': 'I\'m 20, from Taganrog. I chose sales deliberately — I\'m drawn to live communication, the ability to listen and persuade. In this field, results depend directly on you, and that motivates me.',
-      'about.p2': 'I\'m looking for my first position in B2B or B2C sales, where I can grow and learn from a strong team. Ready for cold calls, objection handling, and CRM work.',
+      'about.p2': 'I\'m looking for my first position in B2B or B2C sales, where I can grow and learn from a strong team. Ready for cold calls, if the product is worth it.',
       'about.p3': 'I know how to listen, build rapport quickly, and I\'m not afraid of rejection — I see it as a growth point.',
       'quality.1': 'Communication',
       'quality.2': 'Results-driven',
       'quality.3': 'Fast learner',
       'quality.4': 'Stress resilience',
-      'tag.cold': 'Cold calling',
       'tag.obj': 'Objection handling',
       'tag.crm': 'CRM systems',
       'tag.nego': 'Negotiations',
@@ -107,6 +114,13 @@
       'faq.a2': 'I know how to build and maintain deep emotional connections, and I understand the psychology of communication. Helping people is almost an obsession of mine.',
       'faq.q3': 'What matters most to you in sales?',
       'faq.a3': 'Definitely the product, and in the job overall — the personality of the manager.',
+      'mentors.label': 'Sources of knowledge',
+      'mentors.title': 'What my view of sales is built on',
+      'mentors.desc': 'People and books that shaped my approach to sales.',
+      'mentors.mikhail.name': 'Mikhail Grebenyuk',
+      'mentors.mikhail.comment': 'I learn a lot from Mikhail — I consider him my mentor.',
+      'mentors.dmitry.name': 'Dmitry Norka',
+      'mentors.dmitry.comment': 'Dmitry completely changed my view of modern sales.',
       'contact.label': 'Contact',
       'contact.title': 'Let\'s<br>Connect',
       'contact.desc': 'Looking for opportunities in sales. Open to offers — write to me and I\'ll respond quickly.',
@@ -226,6 +240,14 @@
     });
   });
 
+  document.querySelectorAll('.mentor-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var wasActive = card.classList.contains('active');
+      document.querySelectorAll('.mentor-card.active').forEach(function (c) { c.classList.remove('active'); });
+      if (!wasActive) card.classList.add('active');
+    });
+  });
+
   var cursorCircle = document.getElementById('cursor-circle');
   var cursorDot = document.getElementById('cursor-dot');
 
@@ -247,7 +269,7 @@
       requestAnimationFrame(animateCursor);
     })();
 
-    document.querySelectorAll('a, button, .tag, .quality').forEach(function (el) {
+    document.querySelectorAll('a, button, .tag, .quality, .mentor-card, .book-item').forEach(function (el) {
       el.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
       el.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
     });
